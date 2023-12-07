@@ -156,8 +156,8 @@ const data = ctx.getImageData(0, 0, canvas.width, 100);
 const sprite = new Image();
 class Particle {
     constructor(x, y){
-        this.x = x + 200,
-        this.y = y - 100,
+        this.x = x;
+        this.y = y;
         this.size = 3,
         this.baseX = this.x,
         this.baseY = this.y,
@@ -223,22 +223,24 @@ class Particle {
         }
     }
 }
-function init(){
+function init() {
     particleArray = [];
+
+    // Ajuste a posição inicial para o centro da tela
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
 
     for (var y = 0, y2 = data.height; y < y2; y++) {
         for (var x = 0, x2 = data.width; x < x2; x++) {
             if (data.data[(y * 4 * data.width) + (x * 4) + 3] > 128) {
-                let positionX = x + adjustX;
-                let positionY = y + adjustY;
-                //let positionX = x;
-                //let positionY = y;
-                particleArray.push(new Particle(positionX * 15, positionY * 15));
+                let positionX = (x + adjustX) * 15 + centerX;
+                let positionY = (y + adjustY) * 15 + centerY;
+                particleArray.push(new Particle(positionX, positionY));
             }
         }
     }
-
 }
+
 function animate(){
     //ctx.fillStyle = 'rgba(0,0,0,0.5)';
     //ctx.fillRect(0,0,innerWidth,innerHeight);

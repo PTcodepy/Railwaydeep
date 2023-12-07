@@ -156,8 +156,8 @@ const data = ctx.getImageData(0, 0, canvas.width, 100);
 const sprite = new Image();
 class Particle {
     constructor(x, y){
-        this.x = x;
-        this.y = y;
+        this.x = x - canvas.width / 2;
+        this.y = y - canvas.height / 2;
         this.size = 3,
         this.baseX = this.x,
         this.baseY = this.y,
@@ -233,8 +233,8 @@ function init() {
     for (var y = 0, y2 = data.height; y < y2; y++) {
         for (var x = 0, x2 = data.width; x < x2; x++) {
             if (data.data[(y * 4 * data.width) + (x * 4) + 3] > 128) {
-                let positionX = (x + adjustX) * 15 + centerX;
-                let positionY = (y + adjustY) * 15 + centerY;
+                let positionX = (x + adjustX) * 15;
+                let positionY = (y + adjustY) * 15;
                 particleArray.push(new Particle(positionX, positionY));
             }
         }

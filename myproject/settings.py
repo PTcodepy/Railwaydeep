@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-&0vz+ap#0)=78aq+8qe@npm)&pwwu40s4w-ku21d$*4kgg$!*n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['railwaydeep-production.up.railway.app', 'https://ptcodepy.github.io/Railwaydeep/']
+ALLOWED_HOSTS = ['railwaydeep-production.up.railway.app', 'https://ptcodepy.github.io/Railwaydeep/', '127.0.0.1:8000', '127.0.0.1']
 
 
 # Application definition

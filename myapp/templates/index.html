@@ -254,15 +254,15 @@ function animate(){
 init();
 animate();
 
-// RESIZE SETTING - empty and refill particle array every time window changes size + change canvas size
-window.addEventListener('resize',
-function() {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    adjustX = -60 + canvas.width/30;
-    adjustY = -32 + canvas.height/30;
-    init();
-});
+ function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      adjustX = -60 + canvas.width / 30;
+      adjustY = -32 + canvas.height / 30;
+      init();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
 
 
 function connect(){

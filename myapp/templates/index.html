@@ -11,6 +11,17 @@
     <meta http-equiv="refresh" content="12; url=/personal">
 </head>
 <body>
+	<style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      margin: auto;
+    }
+  </style>
 
 <div id='container'>
     <canvas id="canvas1"></canvas>
@@ -132,11 +143,9 @@ welcomeScreen.from(
 <script>
     const canvas = document.getElementById("canvas1");
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
     let particleArray = [];
-    let adjustX = canvas.width/200;
-    let adjustY = canvas.height/200;
+    let adjustX = canvas.width / 200;
+    let adjustY = canvas.height / 200;
 
 // get mouse mouse position //
 let mouse = {
